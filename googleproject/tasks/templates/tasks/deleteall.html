@@ -1,0 +1,10 @@
+{% extends 'tasks/main.html' %}
+{% block content %}
+<p>Are you sure you want to delete all of the items in your Shopping List?</p>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<input type="submit" name="Confirm">
+	<a href="{% url 'list' %}" >Cancel</a>
+</form>
+{% endblock content %}
