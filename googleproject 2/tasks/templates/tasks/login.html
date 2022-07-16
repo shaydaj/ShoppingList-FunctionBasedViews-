@@ -1,0 +1,33 @@
+{% extends 'tasks/main.html' %} {% block content %}
+
+<h1>Login</h1>
+
+<div>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" name="username" placeholder="Username..." class="form-control">
+    </div>
+
+    <div class="input-group">
+      <input type="password" name="password" placeholder="Password..." class="form-control" >
+    </div>
+
+    <div class="login-container">
+      <input class="btn login_btn" type="submit" value="Login">
+    </div>
+  </form>
+
+</div>
+
+{% for message in messages %}
+  <p id="messages">{{message}}</p>
+{% endfor %}			
+
+  <p>Register for an account <a href="{% url 'register' %}">Register</a></p>
+
+  {% load socialaccount %}
+  <p>Login with Google <a href="{% provider_login_url 'google' %}">Login</a></p>
+
+  {% endblock content %}
+</div>

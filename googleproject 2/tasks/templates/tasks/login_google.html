@@ -1,0 +1,6 @@
+{% extends 'tasks/main.html' %}
+{% block content %}
+
+{% load socialaccount %}
+<a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a>
+{% endblock content %}

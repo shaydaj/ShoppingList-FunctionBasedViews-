@@ -1,0 +1,36 @@
+{% extends 'tasks/main.html' %} {% block content %}
+
+<body>
+  <h1 id="form-title">Register</h1>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="username">
+      <a>Username</a>
+      {{form.username}}
+    </div>
+    <div class="email">
+      <a>Email</a>
+      {{form.email}}
+    </div>
+    <div class="password1">
+      <a>Password</a>
+      {{form.password1}}
+    </div>
+    <div class="password2">
+      <a>Password</a>
+      {{form.password2}}
+    </div>
+           
+    <input
+      class="btn login_btn"
+      type="submit"
+      value="Register Account"/>
+    </form>
+
+    {{form.errors}}
+    Already have an account?
+    <a href="{% url 'login' %}">Login</a>
+    </div>
+
+  {% endblock content %}
+</body>
